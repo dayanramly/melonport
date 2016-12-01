@@ -1,4 +1,4 @@
-### Landing Page Default Get Started
+### Totalitee Get Started
 
 To start develop, you have to
  * Install [NodeJS](https://nodejs.org/en) or [IOJS](https://iojs.org/en)

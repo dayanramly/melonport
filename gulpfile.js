@@ -14,9 +14,10 @@ livereload = require('gulp-livereload'),
 notify = require('gulp-notify'),
 del = require('del');
 
-var StylesCss = 'src/scss/style.scss',
+var StylesCss = 'src/scss/custom.scss',
+MainStylesCss = 'src/scss/style.scss',
 StylesCssFiles = [StylesCss, 'src/scss/**/*.scss'],
-ImageFiles = 'src/img/*',
+ImageFiles = 'src/img/**/*',
 CssFiles = 'src/scss/**/*.scss',
 JsFiles = 'src/scripts/scripts.js',
 AllJsFiles = 'src/scripts/**/*.js',
@@ -26,7 +27,16 @@ OutputJs = 'dist/scripts',
 OutputImg = 'dist/img',
 OutputFont = 'dist/fonts';
 
-// styles
+// main styles
+gulp.task('main-styles', function(){
+    return sass(MainStylesCss, {style:'expanded', noCache:true})
+    .pipe(autoprefixer('last 2 version'))
+    .pipe(cssnano())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(OutputCss));
+    // .pipe(notify({ message: 'Styles task complete' }));
+});
+// custom styles
 gulp.task('styles', function(){
     return sass(StylesCss, {style:'expanded', noCache:true})
     .pipe(autoprefixer('last 2 version'))
@@ -37,7 +47,7 @@ gulp.task('styles', function(){
 });
 //styles non minify
 gulp.task('stylesNoMinify', function(){
-    return sass(StylesCss, {style:'expanded', noCache:true})
+    return sass(MainStylesCss, {style:'expanded', noCache:true})
     .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest(OutputCss));
     // .pipe(notify({ message: 'Styles task complete' }));
@@ -74,11 +84,14 @@ gulp.task('clean', function(){
 });
 
 gulp.task('default', ['clean'], function(){
-    gulp.start('styles', 'stylesNoMinify', 'scripts', 'fonts', 'images');
+    gulp.start('main-styles', 'styles', 'stylesNoMinify', 'scripts', 'fonts', 'images');
 });
 
 gulp.task('watch', function(){
     gulp.watch(CssFiles,['styles']);
     gulp.watch(AllJsFiles,['scripts']);
-    gulp.watch(ImageFiles,['images']);
+})
+
+gulp.task('watch-style', function(){
+    gulp.watch(CssFiles,['styles']);
 })

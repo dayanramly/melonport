@@ -153,9 +153,38 @@
 					<h3 class="main-title">Customer Testimony</h3>
 					<div class="separator"></div>
 
-					<blockquote>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
-					</blockquote>
+					<div class="owl-carousel owl-theme testimony-slider">
+						<div class="item tt-item">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-3 tt-item-content">
+									<div class="tt-item-quote">
+										<img src="dist/img/quotes.png">
+										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
+									</div>
+									<div class="tt-item-profile">
+										<img src="dist/img/team/team01.png">
+										<h5>Albert Bowman, CEO</h5>
+										<p>LumenUs</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item tt-item">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-3 tt-item-content">
+									<div class="tt-item-quote">
+										<img src="dist/img/quotes.png">
+										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
+									</div>
+									<div class="tt-item-profile">
+										<img src="dist/img/team/team01.png">
+										<h5>Dayan Ramly, CEO</h5>
+										<p>LumenUs</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -233,5 +262,17 @@
 	</footer>
 
 	<script type="text/javascript" src="dist/scripts/scripts.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.owl-carousel').owlCarousel({
+				loop:true,
+				nav:true,
+				items:1,
+				dots: false,
+				lazyLoad: true,
+				navText: ["<i class='ion-ios-arrow-thin-left nav-testimony left'></i>","<i class='ion-ios-arrow-thin-right nav-testimony right'></i>"]
+			});
+		});
+	</script>
 </body>
 </html>

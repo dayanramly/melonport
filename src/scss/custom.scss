@@ -173,9 +173,11 @@
 		height: 200px;
 		.col-md-3{
 			position: relative;
+			height: 100%;
 			.services-box{
 				position: absolute;
 				cursor: pointer;
+				width: 100%;
 				.services-box-img{
 					background: $white;
 					padding: 10px;
@@ -190,7 +192,7 @@
 					padding: $spacing-md $spacing-md+$spacing-sm;
 					text-align: center;
 					h5.name{
-
+						font-weight: $font-weight-medium;
 					}
 					p{
 						&.desc{
@@ -213,6 +215,7 @@
 				}
 				&:hover{
 					box-shadow: $shadow-lighter;
+					z-index: 1;
 					.services-box-detail{
 						p{
 							&.desc{
@@ -230,11 +233,82 @@
 }
 // testimony section
 .tt-testimony{
-	height: 500px;
+	height: auto;
+	min-height: 560px;
 	background: url('../img/testimony_bgr.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	padding-bottom: $spacing-lg;
+	.testimony-slider{
+		.tt-item{
+			height: 100%;
+			min-height: 400px;
+			.tt-item-content{
+				background-color: $white;
+				position: relative;
+				text-align: center;
+				box-shadow: $shadow-lighter;
+				border-radius: 5px;
+				.tt-item-quote{
+					padding: $spacing-lg - 20 $spacing-lg $spacing-lg;
+					img{
+						width: auto;
+						height: 25px;
+						margin: 0 auto $spacing-md;
+					}
+					p{
+						color: $par-grey;
+						font-weight: $font-weight-medium;
+					}
+				}
+
+				.tt-item-profile{
+					position: absolute;
+					width: 100%;
+					left: 0;
+					right: 0;
+					margin-top: -30px;
+					img{
+						width: 65px;
+						height: 65px;
+						object-fit: cover;
+						object-position: center;
+						border-radius: 100%;
+						padding: 3px;
+						background: #fff;
+						margin-left: auto;
+						margin-right: auto;
+					}
+					h5{
+						margin-bottom: 0;
+						font-weight: $font-weight-medium;color: 
+						$grey-primary;
+					}
+					p{
+						color: $grey-primary;
+					}
+				}
+			}
+		}
+		.owl-nav{
+			position: absolute;
+			top: $spacing-lg;
+			width: 100%;
+			padding: $spacing-lg $spacing-lg + $spacing-md;
+
+			.nav-testimony{
+				font-size: 40pt;
+				color: $main;
+				&.left{
+					float: left;
+				}
+				&.right{
+					float: right;
+				}
+			}
+		}
+	}
 }
 // team section
 .tt-team{
@@ -242,6 +316,7 @@
 	.team-box{
 		position: relative;
 		margin-bottom: $spacing-lg;
+		cursor: pointer;
 		.team-box-img{
 			background: $white;
 			border: $border-light;
@@ -265,11 +340,10 @@
 			position: absolute;
 			-webkit-transition: height .5s;
 			transition: height .5s;
-			cursor: pointer;
 			h6.name{
 				font-size: $font-size-normal;
 				font-weight: $font-weight-medium;
-				margin-bottom: $spacing-sm;
+				margin-bottom: $spacing-sm / 2;
 				margin-top: 0;
 			}
 			p{
@@ -297,10 +371,11 @@
 					padding-right: $spacing-sm / 2;
 				}
 			}
-			&:hover{
+		}
+		&:hover{
+			.team-box-detail{
 				background: $main;
 				height: 200px;
-				overflow-y: scroll;
 				h6.name{
 					color: $white;
 					font-weight: $font-weight-semiBold;
@@ -332,6 +407,7 @@
 		}
 		p{
 			margin-bottom: $spacing-md + $spacing-sm;
+			color: $par-grey;
 		}
 	}
 	.customer-list-wrapper{
@@ -411,7 +487,7 @@
 		.footer-link{
 			li{
 				line-height: 1.8;
-				font-size: $font-size-micro;
+				font-size: $font-size-micro + 1;
 			}
 		}
 		.footer-detail{
@@ -552,7 +628,7 @@
 		p{
 			font-size: $font-size-normal;
 			margin-bottom: $spacing-lg;
-			color: #656565
+			color: $par-grey;
 		}
 	}
 }
@@ -680,7 +756,7 @@
 		p{
 			font-size: $font-size-normal;
 			margin-bottom: $spacing-lg;
-			color: #656565
+			color: $par-grey;
 		}
 	}
 }
@@ -729,6 +805,8 @@
 						i{
 							color: $main;
 							margin-right: $spacing-sm / 2;
+							font-size: 14pt;
+							vertical-align: middle;
 						}
 					}
 				}
@@ -757,9 +835,9 @@
 			}
 			.bootstrap-select{
 				height: 50px;
-				border: 0;
 				.selectpicker{
 					height: 50px;
+					border: 0;
 					&:focus{
 						outline: none !important;
 						box-shadow: none !important;

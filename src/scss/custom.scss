@@ -114,7 +114,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			opacity: .9;
+			opacity: .75;
 		}
 		&.services{
 			background-image: url('../img/navigation/services.jpg');
@@ -567,8 +567,9 @@
 		}
 		.client-nav{
 			width: 5%;
+			padding-top: $spacing-md;
 			i{
-				font-size: 32pt
+				font-size: 35pt
 			}
 			&.prev{
 				text-align: left;
@@ -579,6 +580,77 @@
 		}
 		.main-content{
 			width: 90%;
+			.nav-main-content{
+				li{
+					width: 25%;
+					text-align: center;
+					padding: 0 10px 10px;
+					&.active{
+						padding: 0;
+						a{
+							padding: 30px 40px;
+							border-bottom-color: transparent;
+							margin-right: 0;
+							img{
+								-webkit-filter: grayscale(0);
+								filter: grayscale(0);
+							}
+						}
+					}
+					a{
+						padding: 25px 10px;
+						border: $border-normal;
+						border-radius: 0;
+						img{
+							width: 115px;
+							height: 45px;
+							object-fit: contain;
+							object-position: 50% 50%;
+							-webkit-filter: grayscale(100%);
+							filter: grayscale(100%);
+						}
+						&:hover{
+							background-color: $white;
+							img{
+								-webkit-filter: grayscale(0);
+								filter: grayscale(0);
+							}
+						}
+					}
+				}
+			}
+			.tab-main-content{
+				border: $border-normal;
+				border-top: 0;
+				padding: $spacing-lg 0;
+				.tab-pane{
+					&.active{
+
+					}
+					.content-text{
+						padding: 0 $spacing-lg + $spacing-md;
+						h4{
+							margin-bottom: $spacing-md;
+							font-weight: $font-weight-semiBold;
+						}
+						p{
+							margin-bottom: $spacing-md;
+							text-align: justify;
+						}
+						.btn-big{
+							margin-top: $spacing-lg;
+						}
+					}
+					.content-img{
+						img{
+							width: 100%;
+							height: 480px;
+							object-fit: cover;
+							object-position: 0 0;
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -685,6 +757,7 @@
 			}
 			.bootstrap-select{
 				height: 50px;
+				border: 0;
 				.selectpicker{
 					height: 50px;
 					&:focus{

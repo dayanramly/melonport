@@ -68,8 +68,9 @@ blockquote{
     color: $grey;
 }
 p{
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight-light;
     font-family: $font-family;
     color: $grey;
     margin-bottom: 10px;
+    line-height: 1.6;
 }

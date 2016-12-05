@@ -20,10 +20,22 @@ a{
 	}
 }
 
-input{
+input, textarea{
 	box-shadow: none !important;
 	&:focus{
 		border-color: $border-input !important;
 		box-shadow: none !important;
 	}
+}
+
+.form-white{
+	border: 0;
+	height: 50px;
+	padding: 6px 20px;
+	font-size: $font-size-micro;
+}
+.form-textarea-white{
+	border: 0;
+	font-size: $font-size-micro;
+	padding: 15px 20px;
 }

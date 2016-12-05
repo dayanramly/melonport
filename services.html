@@ -161,14 +161,55 @@
 		</div>
 	</section>
 
-		<!-- project section -->
-	<section class="tt-project">
+	<!-- project section -->
+	<section class="tt-services-project">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-10 col-md-offset-1">
 					<h3 class="main-title">Estimate Your Project</h3>
 					<div class="separator"></div>
 
+					<form class="form-horizontal form-project">
+						<div class="form-group">
+							<label for="scope-project" class="col-sm-3 col-md-offset-1 control-label project-label">What is the scope of your project?</label>
+							<div class="col-sm-7 project-select">
+								<select class="selectpicker form-control" name="scope-project">
+									<option data-content="<i class='fi flaticon-multimedia icon-select'></i> Cloud & Mobile Development">Cloud & Mobile Development</option>
+									<option data-content="<i class='fi flaticon-analysis icon-select'></i> Business Intelligence & Data Analysis">Business Intelligence & Data Analysis</option>
+									<option data-content="<i class='fi flaticon-technology icon-select'></i> Internet of Think & Big Data">Internet of Think & Big Data</option>
+									<option data-content="<i class='fi flaticon-graphic icon-select'></i> Mentoring & Teaching">Mentoring & Teaching</option>
+								</select>
+							</div>
+						</div>
+						<br />
+						<div class="form-group">
+							<label for="name" class="col-sm-3 col-md-offset-1 control-label project-label">Let us know about you and get an estimate</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control form-white" id="name" placeholder="Your Name">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-7 col-md-offset-4">
+								<input type="text" class="form-control form-white" id="name" placeholder="Your E-mail">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-7 col-md-offset-4">
+								<input type="text" class="form-control form-white" id="name" placeholder="Your Phone Number">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-7 col-md-offset-4">
+								<textarea name="Notes" class="form-control form-textarea-white" placeholder="Notes" rows="8"></textarea> 
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-7 col-md-offset-4 text-right">
+								<button type="submit" class="btn btn-green btn-normal">GET ESTIMATE</button>
+							</div>
+						</div>
+						
+					</form>
 
 				</div>
 			</div>
@@ -247,5 +288,12 @@
 	</footer>
 
 	<script type="text/javascript" src="dist/scripts/scripts.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.selectpicker').selectpicker({
+			});
+
+		});
+	</script>
 </body>
 </html>

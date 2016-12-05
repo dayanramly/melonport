@@ -1,8 +1,8 @@
 @import "partials/color";
 @import "partials/typography";
 @import "partials/button";
-@import "partials/base";
 @import "partials/detail";
+@import "partials/base";
 
 // global
 .separator{
@@ -657,6 +657,56 @@
 						i{
 							color: $main;
 							margin-right: $spacing-sm / 2;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.tt-services-project{
+	background: $light-grey;
+	padding-bottom: $spacing-lg;
+	.form-project{
+		.form-group{
+			margin-bottom: $spacing-md + 5;
+		}
+		.project-label{
+			color: $grey-primary;
+			text-align: left;
+			font-size: $font-size-normal;
+			font-weight: $font-weight-semiBold;
+		}
+		.project-select{
+			.icon-select{
+				color: $main;
+				padding-right: 10px;
+				font-size: 20px;
+			}
+			.bootstrap-select{
+				height: 50px;
+				.selectpicker{
+					height: 50px;
+					&:focus{
+						outline: none !important;
+						box-shadow: none !important;
+					}
+				}
+				.dropdown-menu{
+					&:focus{
+						outline: none !important;
+						box-shadow: none !important;
+					}
+					li{
+						&:focus{
+							outline: none !important;
+							box-shadow: none !important;
+						}
+						a{
+							&:focus{
+								outline: none !important;
+								box-shadow: none !important;
+							}
 						}
 					}
 				}

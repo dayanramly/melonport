@@ -16,6 +16,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
     "font-awesome": "^4.5.0",
-    "Ionicons": "ionicons#^2.0.1"
+    "Ionicons": "ionicons#^2.0.1",
+    "sonar.css": "^0.1.0"
   }
 }

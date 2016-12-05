@@ -21,7 +21,7 @@
 	text-align: center;
 	margin-top: $spacing-lg;
 }
-
+// ==== Index Section ====
 // css for header
 .nav-header{
 	height: 64px;
@@ -102,10 +102,13 @@
 	.navigation-bgr{
 		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: center;
+		background-position: 50% 50%;
 		height: 200px;
-		.black-overlay{
+		position: relative;
+		cursor: pointer;
+		&:after{
 			background: #000000;
+			content: " ";
 			height: 100%;
 			width: 100%;
 			position: absolute;
@@ -121,6 +124,45 @@
 		}
 		&.blog{
 			background-image: url('../img/navigation/blog.jpg');
+		}
+		.navigation-content{
+			position: absolute;
+			top: $spacing-lg + $spacing-sm;
+			left: 0;
+			right: 0;
+			text-align: center;
+			z-index: 3;
+			h3{
+				font-weight: $font-weight-light;
+				color: $white;
+			}
+			p{
+				font-weight: $font-weight-regular;
+				font-size:$font-size-micro;
+				color: $white;
+				display: none;
+			}
+			a{
+				font-size: $font-size-normal;
+				color: $white;
+				display: none;
+			}
+		}
+		&:hover{
+			box-shadow: $shadow-lighter;
+			transform: scale(1.1);
+			z-index: 2;
+			&:after{
+				background: $main;
+			}
+			.navigation-content{
+				p{
+					display: block;
+				}
+				a{
+					display: block;
+				}
+			}
 		}
 	}
 }
@@ -381,7 +423,19 @@
 			background-position: center;
 			background-origin: content-box;
 			.footer-detail-marker{
-
+				.circle{
+					width: 20px;
+					height: 20px;
+					border-radius: 50%;
+					background: $main;
+					position: absolute;
+					top: $spacing-sm + $spacing-lg;
+					left: $spacing-lg + $spacing-lg;
+					&:after{
+						background: $main;
+						border-radius: 50%;
+					}
+				}
 			}
 			.footer-detail-text{
 				.footer-logo{
@@ -470,5 +524,143 @@
 		font-size: $font-size-tiny;
 		padding: $spacing-sm;
 		color: $light-grey;
+	}
+}
+// ==== Client Section ====
+// client hero section
+.tt-client-hero{
+	background: url('../img/client_bgr.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 320px;
+	position: relative;
+	.grey-opacity{
+		background-color: #fbfbfb;
+		opacity: .9;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.hero-text{
+		padding-top: $spacing-lg * 2;
+		h2{
+			color: $grey-primary;
+		}
+		p{
+			font-size: $font-size-normal;
+			margin-bottom: $spacing-lg;
+			color: #656565
+		}
+	}
+}
+// main-client section
+.tt-client-content{
+	padding: $spacing-lg 0;
+	.client-content-wrapper{
+		display: table;
+		width: 100%;
+		.client-nav, .main-content{
+			display: table-cell;
+		}
+		.client-nav{
+			width: 5%;
+			i{
+				font-size: 32pt
+			}
+			&.prev{
+				text-align: left;
+			}
+			&.next{
+				text-align: right;
+			}
+		}
+		.main-content{
+			width: 90%;
+		}
+	}
+}
+// ==== Services Section ====
+// services hero section
+.tt-services-hero{
+	background: url('../img/client_bgr.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 320px;
+	position: relative;
+	.grey-opacity{
+		background-color: #fbfbfb;
+		opacity: .9;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.hero-text{
+		padding-top: $spacing-lg * 2;
+		h2{
+			color: $grey-primary;
+		}
+		p{
+			font-size: $font-size-normal;
+			margin-bottom: $spacing-lg;
+			color: #656565
+		}
+	}
+}
+.tt-services-content{
+	.service-content-list{
+		.service-icon{
+			text-align: right;
+			padding-top: $spacing-lg;
+			i{
+				font-size: 30pt;
+				color: $main;
+			}
+		}
+		.service-content{
+			padding: $spacing-lg 0;
+			border-bottom: $border-light;
+			h4{
+				margin-top: 0;
+				font-size: $font-size-medium;
+				font-weight: $font-weight-medium;
+			}
+			.separator{
+				margin-bottom: $spacing-md + $spacing-sm;
+				&:before{
+					margin-left: 0;
+				}
+			}
+			.content-text{
+				padding-left: 0;
+				p{
+					font-size: $font-size-small;
+					margin-bottom: $spacing-sm;
+					color: $grey-primary;
+					font-weight: $font-weight-regular;
+					line-height: 25px;
+				}
+			}
+			.content-list{
+				ul{
+					margin-bottom: $spacing-lg - 10;
+					li{
+						font-size: $font-size-small - 1;
+						margin-bottom: $spacing-sm;
+						color: $grey-primary;
+						font-weight: $font-weight-medium;
+						i{
+							color: $main;
+							margin-right: $spacing-sm / 2;
+						}
+					}
+				}
+			}
+		}
 	}
 }

@@ -72,14 +72,4 @@ p{
     font-family: $font-family;
     color: $grey;
     margin-bottom: 10px;
-    &.text-small{
-        margin-bottom: 20px;
-        font-size: $font-size-small;
-        line-height: $font-size-small + 10;
-    }
-    &.text-micro{
-        margin-bottom: 10px;
-        font-size: $font-size-micro;
-        line-height: $font-size-micro + 8;
-    }
 }

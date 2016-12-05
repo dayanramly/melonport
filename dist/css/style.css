@@ -7249,6 +7249,163 @@ button.close {
   }
 }
 /*!
+sonar.css - http://urbanoalvarez.es/sonar.css/
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Alejandro U. Alvarez
+*/
+/*!
+sonar.css - http://urbanoalvarez.es/sonar.css/
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Alejandro U. Alvarez
+*/
+@keyframes sonar-base {
+  from {
+    padding: 0;
+    opacity: 0.6;
+  }
+  to {
+    padding: 1.3em;
+    opacity: 0;
+    top: -1.3em;
+    left: -1.3em;
+  }
+}
+@keyframes sonar-stroke {
+  from {
+    border-width: 0.4em;
+    margin: -0.4em;
+  }
+  to {
+    border-width: 0.1em;
+    top: -1.3em;
+    left: -1.3em;
+  }
+}
+.sonar {
+  position: relative;
+}
+.sonar:after {
+  z-index: -1;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  animation-name: sonar-base;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  box-sizing: content-box;
+}
+.sonar.sonar-infinite:after {
+  animation-iteration-count: infinite;
+}
+.sonar.sonar-delay:after {
+  animation-delay: 1s;
+}
+.sonar.sonar-delay-long:after {
+  animation-delay: 2s;
+}
+.sonar.sonar-delay-longer:after {
+  animation-delay: 4s;
+}
+.sonar.sonar-delay-short:after {
+  animation-delay: 0.5s;
+}
+.sonar.sonar-delay-shorter:after {
+  animation-delay: 0.25s;
+}
+.sonar.sonar-slow:after {
+  animation-duration: 2s;
+}
+.sonar.sonar-slower:after {
+  animation-duration: 4s;
+}
+.sonar.sonar-fast:after {
+  animation-duration: 0.5s;
+}
+.sonar.sonar-faster:after {
+  animation-duration: 0.25s;
+}
+.sonar.sonar-stroke:after {
+  border-width: 0;
+  border-color: inherit;
+  border-style: solid;
+  border-radius: inherit;
+  animation-name: sonar-base, sonar-stroke;
+}
+.sonar.sonar-stroke.sonar-hover:after {
+  animation-name: none;
+}
+.sonar.sonar-stroke.sonar-hover.sonar-default:after {
+  border-color: #555555;
+}
+.sonar.sonar-stroke.sonar-hover.sonar-primary:after {
+  border-color: #337ab7;
+}
+.sonar.sonar-stroke.sonar-hover.sonar-info:after {
+  border-color: #5bc0de;
+}
+.sonar.sonar-stroke.sonar-hover.sonar-success:after {
+  border-color: #5cb85c;
+}
+.sonar.sonar-stroke.sonar-hover.sonar-warning:after {
+  border-color: #f0ad4e;
+}
+.sonar.sonar-stroke.sonar-hover.sonar-danger:after {
+  border-color: #d9534f;
+}
+.sonar.sonar-stroke.sonar-hover:hover:after {
+  animation-name: sonar-base, sonar-stroke;
+}
+.sonar.sonar-stroke.sonar-click:after {
+  animation-name: none;
+}
+.sonar.sonar-stroke.sonar-click:focus:after {
+  animation-name: sonar-base, sonar-stroke;
+}
+.sonar.sonar-fill:after {
+  border: none;
+  background: inherit;
+  border-radius: inherit;
+  animation-name: sonar-base;
+}
+.sonar.sonar-fill.sonar-default:after {
+  background-color: #555555;
+}
+.sonar.sonar-fill.sonar-primary:after {
+  background-color: #337ab7;
+}
+.sonar.sonar-fill.sonar-info:after {
+  background-color: #5bc0de;
+}
+.sonar.sonar-fill.sonar-success:after {
+  background-color: #5cb85c;
+}
+.sonar.sonar-fill.sonar-warning:after {
+  background-color: #f0ad4e;
+}
+.sonar.sonar-fill.sonar-danger:after {
+  background-color: #d9534f;
+}
+.sonar.sonar-fill.sonar-hover:after {
+  animation-name: none;
+}
+.sonar.sonar-fill.sonar-hover:hover:after {
+  animation-name: sonar-base;
+  animation-duration: 0.5s;
+}
+.sonar.sonar-fill.sonar-click:after {
+  animation-name: none;
+}
+.sonar.sonar-fill.sonar-click:focus:after {
+  animation-name: sonar-base;
+  animation-duration: 0.5s;
+}
+
+/*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */

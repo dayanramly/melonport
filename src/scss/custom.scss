@@ -13,7 +13,8 @@
 		content: ' ';
 		width: 50px;
 		border-bottom: 2px solid $main;
-		margin-left: 48%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 .main-title{
@@ -282,8 +283,8 @@
 					}
 					h5{
 						margin-bottom: 0;
-						font-weight: $font-weight-medium;color: 
-						$grey-primary;
+						font-weight: $font-weight-medium;
+						color: $grey-primary;
 					}
 					p{
 						color: $grey-primary;
@@ -326,7 +327,7 @@
 				width: 100%;
 				height: 310px;
 				object-fit: cover;
-				object-position: 0 0;
+				object-position: 50% 0;
 			}
 		}
 		.team-box-detail{
@@ -864,4 +865,214 @@
 			}
 		}
 	}
+}
+// responsive content
+@media (max-width: $screen-xs-max){ 
+	.nav-header{
+		z-index: 10;
+		.container{
+			.navbar-collapse{
+				background-color: $white;
+				ul.navbar-right{
+					li{
+						&.btn-request{
+							padding: 13px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.tt-hero{
+		.hero-text{
+			padding-top: $spacing-lg * 2;
+			h1{
+				margin-bottom: 10px;
+				font-size: $font-size-grande - 6;
+				line-height: $font-size-large + 12;
+			}
+			p{
+				font-size: $font-size-micro;
+			}
+		}
+	}
+	.tt-services{
+		padding: $spacing-lg 0 $spacing-lg*2;
+		.services-box-wrapper{
+			height: 240px;
+			.col-md-3{
+				.services-box{
+					left: 5%;
+					width: 90%;
+					.services-box-detail{
+						padding: 0 $spacing-md+$spacing-sm;
+						h5.name{
+							margin-top: 0;
+							margin-bottom: $spacing-sm;
+						}
+						p{
+							&.desc{
+								font-size: $font-size-micro - 1;
+								font-weight: $font-weight-light;
+								margin-bottom: $spacing-sm;
+							}
+						}
+						a.more-services{
+							padding-bottom: $spacing-sm;
+						}
+					}
+				}
+			}
+		}
+	}
+	.tt-team{
+		padding-bottom: $spacing-lg;
+		.team-box{
+			margin-bottom: $spacing-md;
+			.team-box-img{
+				height: 200px;
+				img{
+					height: 200px;
+				}
+			}
+			.team-box-detail{
+				padding: $spacing-sm $spacing-md;
+				height: 80px;
+				width: 100%;
+				position: inherit;
+				h6.name{
+					margin-bottom: 0;
+				}
+				p{
+					&.title{
+						margin-bottom: $spacing-md;
+						font-size: $font-size-micro;
+					}
+					&.desc{
+						display: none;
+						font-size: $font-size-micro - 1;
+						font-weight: $font-weight-light;
+						color: $white;
+						margin-bottom: $spacing-sm;
+					}
+				}
+				a.profile-url{
+					font-size: $font-size-small - 1;
+					i{
+						font-size: 15pt;
+					}
+				}
+			}
+		}
+	}
+	.tt-customer{
+		padding: $spacing-sm 0;
+	}
+	.tt-testimony{
+		.testimony-slider{
+			.active{
+				z-index: 2;
+			}
+			.tt-item{
+				.tt-item-content{
+					.tt-item-quote{
+						padding: 30px 30px $spacing-lg;
+						p{
+							font-size: $font-size-micro;
+						}
+					}
+					.tt-item-profile{
+						h5{
+							font-size: $font-size-small;
+						}
+					}
+				}
+			}
+			.owl-nav{
+				display: none;
+			}
+		}
+	}
+	.footer-detail{
+		height: auto !important;
+		.footer-detail-marker{
+			display: none;
+		}
+	}
+
+	.tt-client-hero{
+		height: 240px;
+		.hero-text{
+			padding-top: $spacing-lg;
+			h2{
+				font-size: $font-size-grande - 6;
+				line-height: $font-size-large + 12;
+			}
+			p{
+				font-size: $font-size-micro;
+			}
+		}
+	}
+	
+	.tt-services-hero{
+		height: 240px;
+		.hero-text{
+			padding-top: $spacing-lg;
+			h2{
+				font-size: $font-size-grande - 6;
+				line-height: $font-size-large + 12;
+			}
+			p{
+				font-size: $font-size-micro;
+			}
+		}
+	}
+	.tt-services-content{
+		.service-content-list{
+			.service-icon{
+				text-align: center;
+				padding-top: $spacing-md;
+			}
+			.service-content{
+				padding: $spacing-md 15px;
+				h4{
+					margin-top: 0;
+					font-size: $font-size-medium;
+					font-weight: $font-weight-medium;
+				}
+				.separator{
+					margin-bottom: $spacing-md + $spacing-sm;
+					&:before{
+						margin-left: 0;
+					}
+				}
+				.content-text{
+					padding-left: 15px;
+					p{
+						font-size: $font-size-small - 1;
+					}
+				}
+				.content-list{
+					.btn-normal{
+						display: table-cell;
+						width: 49%;
+						padding: 11px;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: $screen-sm-min)  { 
+
+}
+@media (max-width: $screen-xs-max)
+and (orientation: portrait){ 
+
+}
+@media (max-width: $screen-xs-max){ 
+
+}
+@media (min-width: $screen-lg-min) { 
+
 }

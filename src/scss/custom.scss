@@ -93,7 +93,9 @@
 			margin-bottom: $spacing-lg;
 		}
 		button{
-
+			&.btn-big{
+				margin-bottom: $spacing-lg;
+			}
 		}
 	}
 }
@@ -179,6 +181,7 @@
 				position: absolute;
 				cursor: pointer;
 				width: 100%;
+				left: 0;
 				.services-box-img{
 					background: $white;
 					padding: 10px;
@@ -326,7 +329,7 @@
 			img{
 				width: 100%;
 				height: 310px;
-				object-fit: cover;
+				object-fit: contain;
 				object-position: 50% 0;
 			}
 		}
@@ -536,6 +539,12 @@
 					font-weight: $font-weight-semiBold;
 				}
 			}
+		}
+		.footer-link-wrapper{
+
+		}
+		.footer-newsletter{
+
 		}
 		.social-link{
 			margin-top: $spacing-md + $spacing-sm;
@@ -1001,6 +1010,310 @@
 			}
 		}
 	}
+	.tt-info{
+		.footer-newsletter{
+			padding-top: $spacing-sm;
+			.input-email{
+				margin-top: $spacing-md;
+			}
+		}
+		.separator{
+			margin-bottom: $spacing-md !important;
+			&:before{
+				margin-left: 0;
+			}
+		}
+		.footer-detail{
+			height: auto !important;
+			padding-bottom: 15px;
+			.footer-detail-marker{
+				.circle{
+					top: $spacing-sm + $spacing-lg !important;
+					left: $spacing-md !important;
+				}
+			}
+			.footer-detail-text{
+				a{
+					font-size: $font-size-micro !important;
+				}
+				p{
+					font-size: $font-size-micro - 1 !important;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.tt-client-hero{
+		height: 240px;
+		.hero-text{
+			padding-top: $spacing-lg;
+			h2{
+				font-size: $font-size-grande - 6;
+				line-height: $font-size-large + 12;
+			}
+			p{
+				font-size: $font-size-micro;
+			}
+		}
+	}
+	.tt-client-content{
+		padding: $spacing-lg 0;
+		.client-slider-wrapper{
+			position: relative;
+			.client-slider{
+				width: 95%;
+				margin-left: auto;
+				margin-right: auto;
+				.tt-item{
+					.main-content{
+						margin-right: 1px;
+						.nav-main-content{
+							li{
+								width: 50%;
+								padding: 0;
+								&.active{
+									padding: 0;
+									a{
+										padding: 25px 10px;
+										border: $border-normal;
+										border-radius: 0;
+										img{
+											-webkit-filter: grayscale(0);
+											filter: grayscale(0);
+										}
+									}
+								}
+								a{
+									margin-right: 0;
+									img{
+										width: 80px;
+										height: 45px;
+										object-fit: contain;
+										object-position: 50% 50%;
+										-webkit-filter: grayscale(100%);
+										filter: grayscale(100%);
+										margin-left: auto;
+										margin-right: auto;
+									}
+									&:hover{
+										img{
+										}
+									}
+								}
+							}
+						}
+						.tab-main-content{
+							.tab-pane{
+								&.active{
+
+								}
+								.content-text{
+									padding: 0 $spacing-lg - 10;
+									text-align: center;
+									h4{
+
+									}
+									p{
+
+									}
+									.btn-big{
+										margin-top: $spacing-md;
+										margin-bottom: $spacing-lg;
+									}
+								}
+								.content-img{
+									img{
+
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.client-slider-nav{
+				display: none;
+			}
+		}
+	}
+
+	.tt-services-hero{
+		height: 240px;
+		.hero-text{
+			padding-top: $spacing-lg;
+			h2{
+				font-size: $font-size-grande - 6;
+				line-height: $font-size-large + 12;
+			}
+			p{
+				font-size: $font-size-micro;
+			}
+		}
+	}
+	.tt-services-content{
+		.service-content-list{
+			.service-icon{
+				text-align: center;
+				padding-top: $spacing-md;
+			}
+			.service-content{
+				padding: $spacing-md 15px;
+				h4{
+					margin-top: 0;
+					font-size: $font-size-medium;
+					font-weight: $font-weight-medium;
+				}
+				.separator{
+					margin-bottom: $spacing-md + $spacing-sm;
+					&:before{
+						margin-left: 0;
+					}
+				}
+				.content-text{
+					padding-left: 15px;
+					p{
+						font-size: $font-size-small - 1;
+					}
+				}
+				.content-list{
+					.btn-normal{
+						display: table-cell;
+						width: 49%;
+						padding: 11px;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: $screen-xs-max)
+and (orientation: landscape){ 
+	.nav-header{
+		z-index: 10;
+		.container{
+			.navbar-collapse{
+				background-color: $white;
+				ul.navbar-right{
+					li{
+						&.btn-request{
+							padding: 13px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.tt-hero{
+		.hero-text{
+			padding-top: $spacing-lg * 2;
+			h1{
+				margin-bottom: 10px;
+				font-size: $font-size-grande - 6;
+				line-height: $font-size-large + 12;
+			}
+			p{
+				font-size: $font-size-micro;
+			}
+		}
+	}
+	.tt-services{
+		padding: $spacing-lg 0 $spacing-lg*2;
+		.services-box-wrapper{
+			height: 240px;
+			.col-md-3{
+				.services-box{
+					left: 5%;
+					width: 90%;
+					.services-box-detail{
+						padding: 0 $spacing-md+$spacing-sm;
+						h5.name{
+							margin-top: 0;
+							margin-bottom: $spacing-sm;
+						}
+						p{
+							&.desc{
+								font-size: $font-size-micro - 1;
+								font-weight: $font-weight-light;
+								margin-bottom: $spacing-sm;
+							}
+						}
+						a.more-services{
+							padding-bottom: $spacing-sm;
+						}
+					}
+				}
+			}
+		}
+	}
+	.tt-team{
+		padding-bottom: $spacing-lg;
+		.team-box{
+			margin-bottom: $spacing-md;
+			.team-box-img{
+				height: 200px;
+				img{
+					height: 200px;
+				}
+			}
+			.team-box-detail{
+				padding: $spacing-sm $spacing-md;
+				height: 80px;
+				width: 100%;
+				position: inherit;
+				h6.name{
+					margin-bottom: 0;
+				}
+				p{
+					&.title{
+						margin-bottom: $spacing-md;
+						font-size: $font-size-micro;
+					}
+					&.desc{
+						display: none;
+						font-size: $font-size-micro - 1;
+						font-weight: $font-weight-light;
+						color: $white;
+						margin-bottom: $spacing-sm;
+					}
+				}
+				a.profile-url{
+					font-size: $font-size-small - 1;
+					i{
+						font-size: 15pt;
+					}
+				}
+			}
+		}
+	}
+	.tt-customer{
+		padding: $spacing-sm 0;
+	}
+	.tt-testimony{
+		.testimony-slider{
+			.active{
+				z-index: 2;
+			}
+			.tt-item{
+				.tt-item-content{
+					.tt-item-quote{
+						padding: 30px 30px $spacing-lg;
+						p{
+							font-size: $font-size-micro;
+						}
+					}
+					.tt-item-profile{
+						h5{
+							font-size: $font-size-small;
+						}
+					}
+				}
+			}
+			.owl-nav{
+				display: none;
+			}
+		}
+	}
 	.footer-detail{
 		height: auto !important;
 		.footer-detail-marker{
@@ -1151,8 +1464,149 @@
 		}
 	}
 }
-@media (min-width: $screen-sm-min)  { 
+@media (min-width: $screen-sm-min) 
+and (max-width: $screen-ipad){ 
+	.nav-header{
+		.container{
+			.navbar-header{
+				a.navbar-brand{
+					padding: 18px;
+					img{
+						height: 25px;
+						width: auto;
+					}
+				}
+			}
+			.navbar-collapse{
+				ul.navbar-right{
+					margin-top: 0;
+					li{
+						a{
+							padding: 22px 10px;
+						}
+						&.btn-request{
+							a{
+								font-size: $font-size-micro;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.tt-hero{
+		.hero-text{
+			padding-top: $spacing-lg * 2;
+		}
+	}
+	.tt-navigation{
+		margin-top: -$spacing-lg;
+	}
+	.tt-team{
+		.team-box{
+			margin-bottom: $spacing-md;
+			.team-box-img{
+				height: 200px;
+				img{
+					height: 200px;
+				}
+			}
+			.team-box-detail{
+				padding: $spacing-sm;
+				h6.name{
+					margin-bottom: 0;
+				}
+				p{
+					&.title{
+						margin-bottom: $spacing-sm;
+						font-size: $font-size-micro;
+						line-height: $font-size-micro + 4;
+					}
+					&.desc{
+						display: none;
+						font-size: $font-size-micro - 1;
+						font-weight: $font-weight-light;
+						color: $white;
+						margin-bottom: $spacing-sm;
+					}
+				}
+				a.profile-url{
+					font-size: $font-size-small - 1;
+					i{
+						font-size: 15pt;
+					}
+				}
+			}
+			&:hover{
+				.team-box-detail{
+					height: 210px;
+				}
+			}
+		}
+	}
+	.tt-footer{
+		.tt-info{
+			.footer-detail{
+				.footer-detail-marker{
+					.circle{
+						left: $spacing-lg;
+					}
+				}
+			}
+			.footer-newsletter{
+				.input-email{
+					margin-top: $spacing-md;
+				}
+			}
+			.separator{
+				margin-bottom: $spacing-md;
+				&:before{
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+@media (min-width: $screen-sm-min) 
+and (max-width: $screen-ipad)
+and (orientation: landscape){ 
+	.tt-customer{
+		.customer-list-wrapper{
+			.customer-list{
+				.col-md-4{
+					padding: 0 5px 5px; 
+					a{
+						.box-customer{
+							padding-top: $spacing-lg - 10;
+							height: 140px;
+						}
+					}
 
+				}
+			}
+		}
+	}
+	.tt-team{
+		.team-box{
+			&:hover{
+				.team-box-detail{
+					height: 180px;
+				}
+			}
+		}
+	}
+	.tt-footer{
+		.tt-info{
+			.footer-detail{
+				.footer-detail-marker{
+					.circle{
+						top: $spacing-sm + $spacing-lg;
+						left: $spacing-lg;
+					}
+				}
+			}
+		}
+	}
 }
 @media (max-width: $screen-xs-max)
 and (orientation: portrait){ 

@@ -1300,12 +1300,12 @@ and (orientation: landscape){
 				}
 				p{
 					&.title{
-						margin-bottom: $spacing-md;
+						margin-bottom: $spacing-sm;
 						font-size: $font-size-micro;
 					}
 					&.desc{
 						display: none;
-						font-size: $font-size-micro - 1;
+						font-size: $font-size-micro;
 						font-weight: $font-weight-light;
 						color: $white;
 						margin-bottom: $spacing-sm;
@@ -1316,6 +1316,11 @@ and (orientation: landscape){
 					i{
 						font-size: 15pt;
 					}
+				}
+			}
+			&:hover{
+				.team-box-detail{
+					height: 150px;
 				}
 			}
 		}
@@ -1348,7 +1353,7 @@ and (orientation: landscape){
 			}
 		}
 	}
-	
+
 	.tt-client-hero{
 		height: 240px;
 		.hero-text{
@@ -1575,9 +1580,25 @@ and (max-width: $screen-ipad){
 	.tt-footer{
 		.tt-info{
 			.footer-detail{
+				padding-top: 15px;
+				height: auto !important;
+				padding-bottom: 15px;
 				.footer-detail-marker{
+					float: right;
 					.circle{
-						left: $spacing-lg;
+						top: $spacing-sm + $spacing-lg !important;
+						left: $spacing-md !important;
+					}
+				}
+				.footer-detail-text{
+					float: left;
+					padding-left: 0;
+					a{
+						font-size: $font-size-micro !important;
+					}
+					p{
+						font-size: $font-size-micro - 1 !important;
+						margin-bottom: 0;
 					}
 				}
 			}

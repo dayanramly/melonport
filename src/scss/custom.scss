@@ -1708,13 +1708,17 @@ and (orientation: landscape){
 		}
 	}
 }
-@media (max-width: $screen-xs-max)
-and (orientation: portrait){ 
 
-}
-@media (max-width: $screen-xs-max){ 
-
-}
-@media (min-width: $screen-lg-min) { 
-
+@media (min-width: $screen-sm-min) 
+and (max-width: $screen-sm-max){ 
+	.tt-services{
+		.services-box-wrapper{
+			.col-sm-12{
+				width: 25% !important;
+				.services-box-detail{
+					padding: 0 15px !important;
+				}
+			}
+		}
+	}
 }

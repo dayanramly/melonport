@@ -1,11 +1,11 @@
 {
-  "name": "totaliteeHtml",
+  "name": "MelonportHtml",
   "version": "0.1.0",
-  "homepage": "https://github.com/dayanramly/totalitee",
+  "homepage": "https://github.com/dayanramly/melonport",
   "authors": [
     "Dayan Ramly Ramadhan <dayanramly@gmail.com>"
   ],
-  "description": "Totalitee Landing Page",
+  "description": "MelonPort Landing Page",
   "main": "index.html",
   "keywords": [
     "html",

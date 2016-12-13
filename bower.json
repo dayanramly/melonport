@@ -1,11 +1,11 @@
 {
-  "name": "totaliteehtml",
+  "name": "melonporthtml",
   "version": "0.1.0",
-  "homepage": "https://github.com/dayanramly/totalitee",
+  "homepage": "https://github.com/dayanramly/melonport",
   "authors": [
     "Dayan Ramly Ramadhan <dayanramly@gmail.com>"
   ],
-  "description": "Totalitee Landing Page",
+  "description": "Melonport Landing Page",
   "main": "index.html",
   "keywords": [
     "html",
@@ -17,7 +17,6 @@
     "bootstrap-sass": "^3.3.6",
     "font-awesome": "^4.5.0",
     "Ionicons": "ionicons#^2.0.1",
-    "sonar.css": "^0.1.0",
     "bootstrap-select-sass": "^1.6.3",
     "owl.carousel": "^2.2.0"
   }

@@ -29,10 +29,9 @@ ul{
 }
 
 a{
-	color: inherit;
+	color: $white;
 	&:hover, &:focus{
 		text-decoration: none;
-		color: $main;
 	}
 }
 

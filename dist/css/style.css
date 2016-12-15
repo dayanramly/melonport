@@ -13358,7 +13358,7 @@ button.close {
 }
 /*
 Flaticon icon font: Flaticon
-Creation date: 02/12/2016 12:20
+Creation date: 13/12/2016 23:24
 */
 @font-face {
   font-family: "Flaticon";
@@ -13370,7 +13370,7 @@ Creation date: 02/12/2016 12:20
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Flaticon";
-    src: url("../fonts/flaticons/Flaticon.svg#Flaticon") format("svg");
+    src: url("../fonts/flaticonsFlaticon.svg#Flaticon") format("svg");
   }
 }
 .fi:before {
@@ -13388,27 +13388,27 @@ Creation date: 02/12/2016 12:20
   font-smoothing: antialiased;
 }
 
-.flaticon-analysis:before {
+.flaticon-arrows:before {
   content: "\f100";
 }
 
-.flaticon-facebook-logo-button:before {
+.flaticon-circle:before {
   content: "\f101";
 }
 
-.flaticon-google-plus-social-logotype:before {
+.flaticon-cogwheel:before {
   content: "\f102";
 }
 
-.flaticon-graphic:before {
+.flaticon-computer:before {
   content: "\f103";
 }
 
-.flaticon-linkedin-logo:before {
+.flaticon-interface:before {
   content: "\f104";
 }
 
-.flaticon-linkedin-logo-button:before {
+.flaticon-interface-1:before {
   content: "\f105";
 }
 
@@ -13416,16 +13416,24 @@ Creation date: 02/12/2016 12:20
   content: "\f106";
 }
 
-.flaticon-right-arrow:before {
+.flaticon-social:before {
   content: "\f107";
 }
 
-.flaticon-technology:before {
+.flaticon-social-media:before {
   content: "\f108";
 }
 
-.flaticon-twitter-logo-button:before {
+.flaticon-symbols:before {
   content: "\f109";
+}
+
+.flaticon-symbols-1:before {
+  content: "\f10a";
+}
+
+.flaticon-transport:before {
+  content: "\f10b";
 }
 
 /*!

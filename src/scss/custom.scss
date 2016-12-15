@@ -18,9 +18,27 @@
 	}
 }
 .main-title{
-	color: $grey-primary;
-	text-align: center;
+	color: $grey-title;
 	margin-top: $spacing-lg;
+	font-size: $font-size-grande - 4;
+	font-weight: $font-weight-regular;
+}
+.desc-title{
+	color: $grey-title;
+	margin-bottom: $spacing-lg;
+	font-size: $font-size-normal;
+	font-weight: $font-weight-regular;
+}
+.modal-video{
+	.modal-content{
+		.modal-header{
+			border-bottom: 0;
+		}
+		.modal-body{
+			padding: 10px;
+			padding-top: 0;
+		}
+	}
 }
 // ==== Index Section ====
 // css for header
@@ -28,9 +46,11 @@
 	height: 64px;
 	border: 0;
 	border-radius: 0;
-	background: #ffffff;
-	box-shadow: $shadow-lighter;
+	background: transparent;
 	margin-bottom: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 10;
 	.container{
 		height: 100%;
 		.navbar-header{
@@ -52,7 +72,11 @@
 				li{
 					a{
 						padding: 22px 25px;
-						color: $black;
+						color: $text-grey;
+						font-weight: $font-weight-medium;
+						&:hover{
+							color: $white;
+						}
 					}
 					&.active{
 						a{
@@ -66,6 +90,22 @@
 							padding: 8px 20px;
 						}
 					}
+					&.dropdown{
+						&.open{
+							a{
+								background-color: transparent;
+							}
+						}
+						ul.dropdown-menu{
+							padding: 0;
+							background: rgba(255,255,255,.2);
+							color: $text-grey;
+							box-shadow: none;
+							li{
+
+							}
+						}
+					}
 				}
 			}
 			&.in{
@@ -77,8 +117,8 @@
 	}
 }
 // hero section
-.tt-hero{
-	background: url('../img/bgr.jpg');
+.mp-hero{
+	background: url('../img/bgr_hero.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
@@ -86,493 +126,16 @@
 	.hero-text{
 		padding-top: $spacing-lg * 3;
 		h1{
-			color: $grey-primary;
+			color: $white;
+			font-size: $font-size-grande + 4;
+			font-weight: $font-weight-light;
 		}
 		p{
 			font-size: $font-size-normal;
 			margin-bottom: $spacing-lg;
+			color: $white;
 		}
-		button{
-			&.btn-big{
-				margin-bottom: $spacing-lg;
-			}
-		}
-	}
-}
-// navigation section
-.tt-navigation{
-	margin-top: -$spacing-lg * 2;
-	.navigation-bgr-wrapper{
-		.navigation-bgr{
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: 50% 50%;
-			height: 200px;
-			position: relative;
-			cursor: pointer;
-			&:after{
-				background: #000000;
-				content: " ";
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				opacity: .75;
-			}
-			&.services{
-				background-image: url('../img/navigation/services.jpg');
-			}
-			&.clients{
-				background-image: url('../img/navigation/clients.jpg');
-			}
-			&.blog{
-				background-image: url('../img/navigation/blog.jpg');
-			}
-			.navigation-content{
-				position: absolute;
-				top: $spacing-lg + $spacing-sm;
-				left: 0;
-				right: 0;
-				text-align: center;
-				z-index: 3;
-				h3{
-					font-weight: $font-weight-light;
-					color: $white;
-				}
-				p{
-					font-weight: $font-weight-regular;
-					font-size:$font-size-micro;
-					color: $white;
-					display: none;
-				}
-				a{
-					font-size: $font-size-normal;
-					color: $white;
-					display: none;
-				}
-			}
-			&:hover{
-				box-shadow: $shadow-lighter;
-				transform: scale(1.1);
-				z-index: 2;
-				&:after{
-					background: $main;
-				}
-				.navigation-content{
-					p{
-						display: block;
-					}
-					a{
-						display: block;
-					}
-				}
-			}
-		}
-	}
-}
-// services section
-.tt-services{
-	padding: $spacing-lg 0 $spacing-lg*4;
-	.services-box-wrapper{
-		height: 200px;
-		.col-md-3{
-			position: relative;
-			height: 100%;
-			.services-box{
-				position: absolute;
-				cursor: pointer;
-				width: 100%;
-				left: 0;
-				.services-box-img{
-					background: $white;
-					padding: 10px;
-					text-align: center;
-					color: $main;
-					i{
-						font-size: 50pt;
-					}
-				}
-				.services-box-detail{
-					background: $white;
-					padding: $spacing-md $spacing-md+$spacing-sm;
-					text-align: center;
-					h5.name{
-						font-weight: $font-weight-medium;
-					}
-					p{
-						&.desc{
-							display: none;
-							font-size: $font-size-micro;
-							font-weight: $font-weight-regular;
-							color: $grey;
-							margin-bottom: $spacing-md;
-						}
-						&.more{
-
-						}
-					}
-					a.more-services{
-						display: none;
-						i{
-							font-size: 15pt;
-						}
-					}
-				}
-				&:hover{
-					box-shadow: $shadow-lighter;
-					z-index: 1;
-					.services-box-detail{
-						p{
-							&.desc{
-								display: block;
-							}
-						}
-						a.more-services{
-							display: block;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-// testimony section
-.tt-testimony{
-	height: auto;
-	min-height: 560px;
-	background: url('../img/testimony_bgr.png');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	padding-bottom: $spacing-lg;
-	.testimony-slider{
-		.tt-item{
-			height: 100%;
-			min-height: 400px;
-			.tt-item-content{
-				background-color: $white;
-				position: relative;
-				text-align: center;
-				box-shadow: $shadow-lighter;
-				border-radius: 5px;
-				.tt-item-quote{
-					padding: $spacing-lg - 20 $spacing-lg $spacing-lg;
-					img{
-						width: auto;
-						height: 25px;
-						margin: 0 auto $spacing-md;
-					}
-					p{
-						color: $par-grey;
-						font-weight: $font-weight-medium;
-					}
-				}
-
-				.tt-item-profile{
-					position: absolute;
-					width: 100%;
-					left: 0;
-					right: 0;
-					margin-top: -30px;
-					img{
-						width: 65px;
-						height: 65px;
-						object-fit: cover;
-						object-position: center;
-						border-radius: 100%;
-						padding: 3px;
-						background: #fff;
-						margin-left: auto;
-						margin-right: auto;
-					}
-					h5{
-						margin-bottom: 0;
-						font-weight: $font-weight-medium;
-						color: $grey-primary;
-					}
-					p{
-						color: $grey-primary;
-					}
-				}
-			}
-		}
-		.owl-nav{
-			position: absolute;
-			top: $spacing-lg;
-			width: 100%;
-			padding: $spacing-lg $spacing-lg + $spacing-md;
-
-			.nav-testimony{
-				font-size: 40pt;
-				color: $main;
-				&.left{
-					float: left;
-				}
-				&.right{
-					float: right;
-				}
-			}
-		}
-	}
-}
-// team section
-.tt-team{
-	padding-bottom: $spacing-lg * 3;
-	.team-box{
-		position: relative;
-		margin-bottom: $spacing-lg;
-		cursor: pointer;
-		.team-box-img{
-			background: $white;
-			border: $border-light;
-			padding: 10px;
-			height: 320px;
-			img{
-				width: 100%;
-				height: 310px;
-				object-fit: contain;
-				object-position: 50% 0;
-			}
-		}
-		.team-box-detail{
-			background: $white;
-			border: $border-light;
-			border-top: 0;
-			padding: $spacing-md $spacing-md+$spacing-sm;
-			text-align: center;
-			height: 90px;
-			width: 100%;
-			position: absolute;
-			-webkit-transition: height .5s;
-			transition: height .5s;
-			h6.name{
-				font-size: $font-size-normal;
-				font-weight: $font-weight-medium;
-				margin-bottom: $spacing-sm / 2;
-				margin-top: 0;
-			}
-			p{
-				&.title{
-					font-size: $font-size-small;
-					font-weight: $font-weight-regular;
-					color: $grey;
-					margin-bottom: $spacing-md
-				}
-				&.desc{
-					display: none;
-					font-size: $font-size-micro - 1;
-					font-weight: $font-weight-light;
-					color: $white;
-					margin-bottom: $spacing-md;
-				}
-			}
-			a.profile-url{
-				display: none;
-				color: $white;
-				font-size: $font-size-small;
-				i{
-					font-size: 18pt;
-					vertical-align: middle;
-					padding-right: $spacing-sm / 2;
-				}
-			}
-		}
-		&:hover{
-			.team-box-detail{
-				background: $main;
-				height: 200px;
-				h6.name{
-					color: $white;
-					font-weight: $font-weight-semiBold;
-				}
-				p{
-					color: $white;
-					&.title{
-						font-weight: $font-weight-light;
-					}
-					&.desc{
-						display: block;
-					}
-				}
-				a.profile-url{
-					display: block;
-				}
-			}
-		}
-	}
-}
-// customer section
-.tt-customer{
-	padding: $spacing-lg 0;
-	.customer-text{
-		h2{
-			font-weight: $font-weight-semiBold;
-			color: $grey-primary;
-			margin-bottom: $spacing-md;
-		}
-		p{
-			margin-bottom: $spacing-md + $spacing-sm;
-			color: $par-grey;
-		}
-	}
-	.customer-list-wrapper{
-		padding: $spacing-md;
-		.customer-list{
-			.col-md-4{
-				padding-bottom: 15px;
-				a{
-					.box-customer{
-						padding-top: $spacing-lg;
-						border: $border-normal;
-						text-align: center;
-						height: 170px;
-						position: relative;
-						transition: all .2s ease-in-out;
-
-						img{
-							width: 110px;
-							height: 50px;
-							object-fit: contain;
-							object-position: center;
-							vertical-align: middle;
-						}
-						.box-text{
-							display: block;
-							position: absolute;
-							left: 0;
-							right: 0;
-							bottom: 10px;
-							p{
-								font-size: 10px;
-								color: $white;
-								margin-bottom: 5px;
-							}
-							i{
-								color: $white;
-								&:before{
-									font-weight: $font-weight-semiBold;
-								}
-							}
-						}
-					}
-					&:hover{
-						.box-customer{
-							background: $main;
-							border: none;
-							box-shadow: $shadow-lighter;
-							transform: scale(1.1);
-							img{
-								filter:brightness(200%);
-							}
-							.box-text{
-								display: block;
-								position: absolute;
-								left: 0;
-								right: 0;
-							}
-						}
-					}
-				}
-
-			}
-		}
-	}
-}
-// css for footer
-.tt-footer{
-	.tt-info{
-		border-top: $border-light;
-		padding-top: $spacing-md;;
-		margin-bottom: $spacing-lg;
-		.footer-title{
-			font-size: $font-size-small;
-			color: $grey-primary;
-			margin-bottom: 4px;
-		}
-		.footer-link{
-			li{
-				line-height: 1.8;
-				font-size: $font-size-micro + 1;
-			}
-		}
-		.footer-detail{
-			height: 285px;
-			padding-top: 30px;
-			background: url('../img/map.png');
-			background-repeat: no-repeat;
-			background-size: contain;
-			background-position: center;
-			background-origin: content-box;
-			.footer-detail-marker{
-				.circle{
-					width: 20px;
-					height: 20px;
-					border-radius: 50%;
-					background: $main;
-					position: absolute;
-					top: $spacing-sm + $spacing-lg;
-					left: $spacing-lg + $spacing-lg;
-					&:after{
-						background: $main;
-						border-radius: 50%;
-					}
-				}
-			}
-			.footer-detail-text{
-				.footer-logo{
-					img{
-						object-fit: cover;
-						object-position: center;
-						width: 140px;
-						height: auto;
-					}
-				}
-				a{
-					color: $main;
-					font-size: $font-size-small;
-					font-weight: $font-weight-semiBold;
-					margin: 30px 0 $spacing-sm;
-					display: block;
-				}
-				p{
-					color: $grey-primary;
-					font-size: $font-size-small;
-					font-weight: $font-weight-semiBold;
-				}
-			}
-		}
-		.footer-link-wrapper{
-
-		}
-		.footer-newsletter{
-
-		}
-		.social-link{
-			margin-top: $spacing-md + $spacing-sm;
-			li{
-				display: inline-block;
-				padding-right: $spacing-sm;
-				a{
-					i{
-						color: #e7e7e7;
-						font-size: 32px;
-					}
-					&:hover{
-						i{
-							color: darken(#e7e7e7, 15%);
-						}
-					}
-				}
-			}
-		}
-		.separator{
-			margin-bottom: $spacing-md + $spacing-sm;
-			&:before{
-				margin-left: 0;
-			}
-		}
-		.input-email{
+		.input-newsletter{
 			margin-top: $spacing-md + $spacing-sm;
 			input{
 				position: relative;
@@ -581,22 +144,31 @@
 				width: 100%;
 				display: table-cell;
 				height: 50px;
+				border-color: $white;
+				color: $white;
 				border-right: 0;
 				font-size: $font-size-micro;
+				background: rgba(255,255,255,.1);
+				&:focus{
+					border-color: $white !important;
+				}
 			}
 			.input-group-link{
 				display: table-cell;
 				width: 1%;
 				margin-left: -1px;
-				border: 1px solid #ccc;
+				border: 1px solid $white;
 				padding: 10px 15px 10px 10px;
 				border-top-right-radius: 4px;
 				border-bottom-right-radius: 4px;
 				border-left: 0;
 				vertical-align: middle;
+				background: rgba(255,255,255,.1);
 				a{
+					color: $white;
 					&:hover{
 						i{
+							color: $light-grey; 
 							&:before{
 								font-weight: 700;
 							}
@@ -606,1119 +178,261 @@
 			}
 		}
 	}
-	.tt-copyright{
-		background: $grey-primary;
-		text-align: center;
-		font-size: $font-size-tiny;
-		padding: $spacing-sm;
-		color: $light-grey;
-	}
 }
-// ==== Client Section ====
-// client hero section
-.tt-client-hero{
-	background: url('../img/client_bgr.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
-	height: 320px;
-	position: relative;
-	.grey-opacity{
-		background-color: #fbfbfb;
-		opacity: .9;
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-	.hero-text{
-		padding-top: $spacing-lg * 2;
-		h2{
-			color: $grey-primary;
-		}
-		p{
-			font-size: $font-size-normal;
-			margin-bottom: $spacing-lg;
-			color: $par-grey;
-		}
-	}
-}
-// main-client section
-.tt-client-content{
-	padding: $spacing-lg 0;
-	.client-slider-wrapper{
-		position: relative;
-		.client-slider{
-			width: 90%;
-			margin-left: auto;
-			margin-right: auto;
-			.tt-item{
-				.main-content{
-					.nav-main-content{
-						li{
-							width: 25%;
-							text-align: center;
-							padding: 0 10px 10px;
-							&.active{
-								padding: 0;
-								a{
-									padding: 30px 10px;
-									border-bottom-color: transparent;
-									margin-right: 0;
-									img{
-										-webkit-filter: grayscale(0);
-										filter: grayscale(0);
-									}
-								}
-							}
-							a{
-								padding: 25px 10px;
-								border: $border-normal;
-								border-radius: 0;
-								img{
-									width: 115px;
-									height: 45px;
-									object-fit: contain;
-									object-position: 50% 50%;
-									-webkit-filter: grayscale(100%);
-									filter: grayscale(100%);
-									margin-left: auto;
-									margin-right: auto;
-								}
-								&:hover{
-									background-color: $white;
-									img{
-										-webkit-filter: grayscale(0);
-										filter: grayscale(0);
-									}
-								}
-							}
-						}
-					}
-					.tab-main-content{
-						border: $border-normal;
-						border-top: 0;
-						padding: $spacing-lg 0;
-						.tab-pane{
-							&.active{
-
-							}
-							.content-text{
-								padding: 0 $spacing-lg + $spacing-md;
-								h4{
-									margin-bottom: $spacing-md;
-									font-weight: $font-weight-semiBold;
-								}
-								p{
-									margin-bottom: $spacing-md;
-									text-align: justify;
-								}
-								.btn-big{
-									margin-top: $spacing-lg;
-								}
-							}
-							.content-img{
-								img{
-									width: 100%;
-									height: 480px;
-									object-fit: cover;
-									object-position: 0 0;
-								}
-							}
-						}
-					}
-				}
+// count section
+.mp-count{
+	.mp-count-wrapper{
+		padding: $spacing-lg $spacing-md;
+		.mp-count-box{
+			border-right: 1px solid $light-grey;
+			text-align: center;
+			&:last-child{
+				border-right: 0;
 			}
-		}
-		.client-slider-nav{
-			position: absolute;
-			width: 100%;
-			top: $spacing-md;
-			left: 0;
-			a{
-				i{
-					font-size: 40pt;
-				}
-				&.prev-btn{
-					float: left;
-				}
-				&.next-btn{
-					float: right;
-				}
-			}
-		}
-	}
-}
-// ==== Services Section ====
-// services hero section
-.tt-services-hero{
-	background: url('../img/client_bgr.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
-	height: 320px;
-	position: relative;
-	.grey-opacity{
-		background-color: #fbfbfb;
-		opacity: .9;
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-	.hero-text{
-		padding-top: $spacing-lg * 2;
-		h2{
-			color: $grey-primary;
-		}
-		p{
-			font-size: $font-size-normal;
-			margin-bottom: $spacing-lg;
-			color: $par-grey;
-		}
-	}
-}
-.tt-services-content{
-	.service-content-list{
-		.service-icon{
-			text-align: right;
-			padding-top: $spacing-lg;
-			i{
-				font-size: 30pt;
-				color: $main;
-			}
-		}
-		.service-content{
-			padding: $spacing-lg 0;
-			border-bottom: $border-light;
-			h4{
-				margin-top: 0;
-				font-size: $font-size-medium;
-				font-weight: $font-weight-medium;
-			}
-			.separator{
-				margin-bottom: $spacing-md + $spacing-sm;
-				&:before{
-					margin-left: 0;
-				}
-			}
-			.content-text{
-				padding-left: 0;
-				p{
-					font-size: $font-size-small;
-					margin-bottom: $spacing-sm;
-					color: $grey-primary;
-					font-weight: $font-weight-regular;
-					line-height: 25px;
-				}
-			}
-			.content-list{
-				ul{
-					margin-bottom: $spacing-lg - 10;
-					li{
-						font-size: $font-size-small - 1;
-						margin-bottom: $spacing-sm;
-						color: $grey-primary;
-						font-weight: $font-weight-medium;
-						i{
-							color: $main;
-							margin-right: $spacing-sm / 2;
-							font-size: 14pt;
-							vertical-align: middle;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-.tt-services-project{
-	background: $light-grey;
-	padding-bottom: $spacing-lg;
-	.form-project{
-		.form-group{
-			margin-bottom: $spacing-md + 5;
-		}
-		.project-label{
-			color: $grey-primary;
-			text-align: left;
-			font-size: $font-size-normal;
-			font-weight: $font-weight-semiBold;
-		}
-		.project-select{
-			.icon-select{
-				color: $main;
-				padding-right: 10px;
-				font-size: 20px;
-			}
-			.bootstrap-select{
-				height: 50px;
-				.selectpicker{
-					height: 50px;
-					border: 0;
-					&:focus{
-						outline: none !important;
-						box-shadow: none !important;
-					}
-				}
-				.dropdown-menu{
-					&:focus{
-						outline: none !important;
-						box-shadow: none !important;
-					}
-					li{
-						&:focus{
-							outline: none !important;
-							box-shadow: none !important;
-						}
-						a{
-							&:focus{
-								outline: none !important;
-								box-shadow: none !important;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-// responsive content
-@media (max-width: $screen-xs-max){ 
-	.nav-header{
-		z-index: 10;
-		.container{
-			.navbar-collapse{
-				background-color: $white;
-				ul.navbar-right{
-					li{
-						&.btn-request{
-							padding: 13px;
-						}
-					}
-				}
-			}
-		}
-	}
-	.tt-hero{
-		.hero-text{
-			padding-top: $spacing-lg * 2;
-			h1{
-				margin-bottom: 10px;
-				font-size: $font-size-grande - 6;
-				line-height: $font-size-large + 12;
+			h2{
+				font-weight: $font-weight-light;
+				font-size: $font-size-venti;
+				color: #0c1529;
 			}
 			p{
-				font-size: $font-size-micro;
+				font-size: $font-size-small;
 			}
 		}
 	}
-	.tt-navigation{
-		.navigation-bgr-wrapper{
-			padding-left: 0;
-			padding-right: 0;
-			.navigation-bgr{
-				&:hover{
-					transform: scale(1);
+}
+// about section
+.mp-about{
+	margin: 0 0 $spacing-lg * 2;
+	.mp-about-title{
+
+	}
+	.mp-about-content{
+		.mp-about-box{
+			text-align: center;
+			padding: $spacing-md $spacing-lg - $spacing-md;
+			border: 1px solid $light-grey;
+			min-height: 430px;
+			.about-img-box{
+				height: 100px;
+				img{
+					height: 80px;
+					width: auto;
+					object-fit: contain;
+					object-position: 50% 50%;
+				}
+			}
+			h3{
+				font-size: $font-size-medium;
+				font-weight: $font-weight-medium;
+				padding: 0 $spacing-md;
+				color: $grey-title;
+				line-height: 30px;
+				min-height: 70px;
+				vertical-align: middle;
+			}
+			p{
+				color: $par-grey;
+			}
+		}
+	}
+}
+// get started section
+.mp-started{
+	background: $light-grey;
+	padding-bottom: $spacing-lg + $spacing-md;
+	min-height: 500px;
+	.started-tab{
+		.nav-started{
+			li{
+				width: 33.2%;
+				a{
+					background: $white;
+					color: $grey-title;
+					border-radius: 0;
+					border: 0;
+					i{
+						font-size: $font-size-medium;
+						vertical-align: middle;
+						margin-right: $spacing-sm;
+					}
+					&:hover{
+						background: darken($white, 8%);
+					}
+				}
+				&.active{
+					a{
+						background: $main;
+						color: $white;
+					}
+				}
+			}
+		}
+		.content-started{
+			padding: $spacing-md + $spacing-sm 0;
+			.form-group{
+				margin: $spacing-md 0 ;
+				label{
+					font-size: $font-size-medium - 2;
+					font-weight: $font-weight-medium;
+					color: $par-grey;
+				}
+				.text-code{
+					margin-left: 15px;
+					margin-top: 10px;
+					padding: 15px 20px;
+					border: 1px dashed #aaaaaa;
+					border-radius: 6px;
+					font-size: $font-size-normal - 1;
+					color: $par-grey;
 				}
 			}
 		}
 	}
-	.tt-services{
-		padding: $spacing-lg 0 $spacing-lg*2;
-		.services-box-wrapper{
-			.col-md-3{
-				height: 220px;
-				position: static;
-				-webkit-transition: height .5s;
-				transition: height .5s;
-				.services-box{
-					left: 5%;
-					width: 90%;					
-					.services-box-detail{
-						padding: 0 $spacing-md+$spacing-sm;
-						h5.name{
-							margin-top: 0;
-							margin-bottom: $spacing-sm;
-						}
-						p{
-							&.desc{
-								font-size: $font-size-micro - 1;
-								font-weight: $font-weight-light;
-								margin-bottom: $spacing-sm;
-							}
-						}
-						a.more-services{
-							padding-bottom: $spacing-sm;
+}
+// partner section
+.mp-partner{
+	background: $white;
+	margin: $spacing-md 0;
+	.mp-partner-wrapper{
+		padding: $spacing-md 0;
+		&:first-child{
+			border-bottom: $border-light;
+		}
+		.mp-partner-title{
+			h4{
+				font-weight: $font-weight-regular;
+				color: $par-grey;
+				padding-top: 10px;
+			}
+		}	
+		.mp-partner-list{
+			text-align: right;
+			ul{
+				li{
+					display: inline-block;
+					padding: $spacing-sm $spacing-lg;
+					img{
+						max-height: 50px;
+					}
+				}
+			}
+		}
+	}
+}
+// video section
+.mp-video{
+	background: url('../img/bgr_video.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 420px;
+	padding: $spacing-lg * 2 0;
+	h2{
+		color: $white;
+		font-size: $font-size-venti - 3;
+		font-weight: $font-weight-regular;
+	}
+	h5{
+		color: $white;
+		font-weight: $font-weight-regular;
+		font-size: $font-size-grande - 3;
+		margin-top: $spacing-sm;
+		margin-bottom: $spacing-md;
+	}
+	a{
+		cursor: pointer;
+		i{
+			color: $light-blue;	
+			font-size: $font-size-venti;
+		}
+		&:hover{
+			i{
+				color: darken($light-blue, 10%);
+			}
+		}
+	}
+}
+// footer section
+.mp-footer{
+	background: $main;
+	padding: $spacing-lg - 10 0;
+	.footer-logo{
+		img{
+			height: 50px;
+			width: auto;
+		}
+		p{
+			font-weight: $font-weight-medium;
+			font-size: $font-size-micro - 1;
+			margin-top: $spacing-sm + 5;
+			color: $text-grey;
+		}
+	}
+	.footer-link{
+		padding-top: $spacing-md;
+		text-align: center;
+		ul{
+			li{
+				display: inline-block;
+				padding: $spacing-sm $spacing-md;
+				a{
+					color: $white;
+					&:hover{
+						color: darken($white, 15%);
+					}
+				}
+			}
+		}
+	}
+	.footer-icon{
+		padding-top: $spacing-md;
+		text-align: right;
+		ul{
+			li{
+				display: inline-block;
+				padding: $spacing-sm;
+				a{
+					i{
+						font-size: $font-size-normal;
+						color: $white;
+						&:hover{
+							color: darken($white, 15%);
 						}
 					}
 					&:hover{
-						.services-box-detail{
-							p{
-								&.desc{
-									display: block;
-								}
-							}
-							a.more-services{
-								display: block;
-							}
-						}
-					}
-				}
-				&:hover{
-					height: 300px;
-				}
-			}
-		}
-	}
-	.tt-team{
-		padding-bottom: $spacing-lg;
-		.team-box{
-			margin-bottom: $spacing-md;
-			.team-box-img{
-				height: 200px;
-				img{
-					height: 200px;
-				}
-			}
-			.team-box-detail{
-				padding: $spacing-sm $spacing-md;
-				height: 80px;
-				width: 100%;
-				position: inherit;
-				h6.name{
-					margin-bottom: 0;
-				}
-				p{
-					&.title{
-						margin-bottom: $spacing-md;
-						font-size: $font-size-micro;
-					}
-					&.desc{
-						display: none;
-						font-size: $font-size-micro - 1;
-						font-weight: $font-weight-light;
-						color: $white;
-						margin-bottom: $spacing-sm;
-					}
-				}
-				a.profile-url{
-					font-size: $font-size-small - 1;
-					i{
-						font-size: 15pt;
+						color: darken($white, 15%);
 					}
 				}
 			}
 		}
 	}
-	.tt-customer{
-		padding: $spacing-sm 0;
-	}
-	.tt-testimony{
-		.testimony-slider{
-			.active{
-				z-index: 2;
-			}
-			.tt-item{
-				.tt-item-content{
-					.tt-item-quote{
-						padding: 30px 30px $spacing-lg;
-						p{
-							font-size: $font-size-micro;
-						}
-					}
-					.tt-item-profile{
-						h5{
-							font-size: $font-size-small;
-						}
-					}
-				}
-			}
-			.owl-nav{
-				display: none;
-			}
-		}
-	}
-	.tt-info{
-		.footer-newsletter{
-			padding-top: $spacing-sm;
-			.input-email{
-				margin-top: $spacing-md;
-			}
-		}
-		.separator{
-			margin-bottom: $spacing-md !important;
-			&:before{
-				margin-left: 0;
-			}
-		}
-		.footer-detail{
-			height: auto !important;
-			padding-bottom: 15px;
-			.footer-detail-marker{
-				float: right;
-				.circle{
-					top: $spacing-sm + $spacing-lg !important;
-					left: $spacing-md !important;
-				}
-			}
-			.footer-detail-text{
-				float: left;
-				padding-left: 0;
-				a{
-					font-size: $font-size-micro !important;
-				}
-				p{
-					font-size: $font-size-micro - 1 !important;
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
+}
 
-	.tt-client-hero{
-		height: 240px;
-		.hero-text{
-			padding-top: $spacing-lg;
-			h2{
-				font-size: $font-size-grande - 6;
-				line-height: $font-size-large + 12;
-			}
-			p{
-				font-size: $font-size-micro;
-			}
-		}
-	}
-	.tt-client-content{
-		padding: $spacing-lg 0;
-		.client-slider-wrapper{
-			position: relative;
-			.client-slider{
-				width: 95%;
-				margin-left: auto;
-				margin-right: auto;
-				.tt-item{
-					.main-content{
-						margin-right: 1px;
-						.nav-main-content{
-							li{
-								width: 50%;
-								padding: 0;
-								&.active{
-									padding: 0;
-									a{
-										padding: 25px 10px;
-										border: $border-normal;
-										border-radius: 0;
-										img{
-											-webkit-filter: grayscale(0);
-											filter: grayscale(0);
-										}
-									}
-								}
-								a{
-									margin-right: 0;
-									img{
-										width: 80px;
-										height: 45px;
-										object-fit: contain;
-										object-position: 50% 50%;
-										-webkit-filter: grayscale(100%);
-										filter: grayscale(100%);
-										margin-left: auto;
-										margin-right: auto;
-									}
-									&:hover{
-										img{
-										}
-									}
-								}
-							}
-						}
-						.tab-main-content{
-							.tab-pane{
-								&.active{
+// responsive content
+@media (max-width: $screen-xs-max){ 
 
-								}
-								.content-text{
-									padding: 0 $spacing-lg - 10;
-									text-align: center;
-									h4{
-
-									}
-									p{
-
-									}
-									.btn-big{
-										margin-top: $spacing-md;
-										margin-bottom: $spacing-lg;
-									}
-								}
-								.content-img{
-									img{
-
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			.client-slider-nav{
-				display: none;
-			}
-		}
-	}
-
-	.tt-services-hero{
-		height: 240px;
-		.hero-text{
-			padding-top: $spacing-lg;
-			h2{
-				font-size: $font-size-grande - 6;
-				line-height: $font-size-large + 12;
-			}
-			p{
-				font-size: $font-size-micro;
-			}
-		}
-	}
-	.tt-services-content{
-		.service-content-list{
-			.service-icon{
-				text-align: center;
-				padding-top: $spacing-md;
-			}
-			.service-content{
-				padding: $spacing-md 15px;
-				h4{
-					margin-top: 0;
-					font-size: $font-size-medium;
-					font-weight: $font-weight-medium;
-				}
-				.separator{
-					margin-bottom: $spacing-md + $spacing-sm;
-					&:before{
-						margin-left: 0;
-					}
-				}
-				.content-text{
-					padding-left: 15px;
-					p{
-						font-size: $font-size-small - 1;
-					}
-				}
-				.content-list{
-					.btn-normal{
-						display: table-cell;
-						width: 49%;
-						padding: 11px;
-					}
-				}
-			}
-		}
-	}
 }
 @media (max-width: $screen-xs-max)
 and (orientation: landscape){ 
-	.nav-header{
-		z-index: 10;
-		.container{
-			.navbar-collapse{
-				background-color: $white;
-				ul.navbar-right{
-					li{
-						&.btn-request{
-							padding: 13px;
-						}
-					}
-				}
-			}
-		}
-	}
-	.tt-hero{
-		.hero-text{
-			padding-top: $spacing-lg * 2;
-			h1{
-				margin-bottom: 10px;
-				font-size: $font-size-grande - 6;
-				line-height: $font-size-large + 12;
-			}
-			p{
-				font-size: $font-size-micro;
-			}
-		}
-	}
-	.tt-services{
-		padding: $spacing-lg 0 $spacing-lg*2;
-		.services-box-wrapper{
-			height: 240px;
-			.col-md-3{
-				.services-box{
-					left: 5%;
-					width: 90%;
-					.services-box-detail{
-						padding: 0 $spacing-md+$spacing-sm;
-						h5.name{
-							margin-top: 0;
-							margin-bottom: $spacing-sm;
-						}
-						p{
-							&.desc{
-								font-size: $font-size-micro - 1;
-								font-weight: $font-weight-light;
-								margin-bottom: $spacing-sm;
-							}
-						}
-						a.more-services{
-							padding-bottom: $spacing-sm;
-						}
-					}
-				}
-			}
-		}
-	}
-	.tt-team{
-		padding-bottom: $spacing-lg;
-		.team-box{
-			margin-bottom: $spacing-md;
-			.team-box-img{
-				height: 200px;
-				img{
-					height: 200px;
-				}
-			}
-			.team-box-detail{
-				padding: $spacing-sm $spacing-md;
-				height: 80px;
-				width: 100%;
-				position: inherit;
-				h6.name{
-					margin-bottom: 0;
-				}
-				p{
-					&.title{
-						margin-bottom: $spacing-sm;
-						font-size: $font-size-micro;
-					}
-					&.desc{
-						display: none;
-						font-size: $font-size-micro;
-						font-weight: $font-weight-light;
-						color: $white;
-						margin-bottom: $spacing-sm;
-					}
-				}
-				a.profile-url{
-					font-size: $font-size-small - 1;
-					i{
-						font-size: 15pt;
-					}
-				}
-			}
-			&:hover{
-				.team-box-detail{
-					height: 150px;
-				}
-			}
-		}
-	}
-	.tt-customer{
-		padding: $spacing-sm 0;
-	}
-	.tt-testimony{
-		.testimony-slider{
-			.active{
-				z-index: 2;
-			}
-			.tt-item{
-				.tt-item-content{
-					.tt-item-quote{
-						padding: 30px 30px $spacing-lg;
-						p{
-							font-size: $font-size-micro;
-						}
-					}
-					.tt-item-profile{
-						h5{
-							font-size: $font-size-small;
-						}
-					}
-				}
-			}
-			.owl-nav{
-				display: none;
-			}
-		}
-	}
 
-	.tt-client-hero{
-		height: 240px;
-		.hero-text{
-			padding-top: $spacing-lg;
-			h2{
-				font-size: $font-size-grande - 6;
-				line-height: $font-size-large + 12;
-			}
-			p{
-				font-size: $font-size-micro;
-			}
-		}
-	}
-	.tt-client-content{
-		padding: $spacing-lg 0;
-		.client-slider-wrapper{
-			position: relative;
-			.client-slider{
-				width: 95%;
-				margin-left: auto;
-				margin-right: auto;
-				.tt-item{
-					.main-content{
-						margin-right: 1px;
-						.nav-main-content{
-							li{
-								width: 50%;
-								padding: 0;
-								&.active{
-									padding: 0;
-									a{
-										padding: 25px 10px;
-										border: $border-normal;
-										border-radius: 0;
-										img{
-											-webkit-filter: grayscale(0);
-											filter: grayscale(0);
-										}
-									}
-								}
-								a{
-									margin-right: 0;
-									img{
-										width: 80px;
-										height: 45px;
-										object-fit: contain;
-										object-position: 50% 50%;
-										-webkit-filter: grayscale(100%);
-										filter: grayscale(100%);
-										margin-left: auto;
-										margin-right: auto;
-									}
-									&:hover{
-										img{
-										}
-									}
-								}
-							}
-						}
-						.tab-main-content{
-							.tab-pane{
-								&.active{
-
-								}
-								.content-text{
-									padding: 0 $spacing-lg - 10;
-									text-align: center;
-									h4{
-
-									}
-									p{
-
-									}
-									.btn-big{
-										margin-top: $spacing-md;
-										margin-bottom: $spacing-lg;
-									}
-								}
-								.content-img{
-									img{
-
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			.client-slider-nav{
-				display: none;
-			}
-		}
-	}
-
-	.tt-services-hero{
-		height: 240px;
-		.hero-text{
-			padding-top: $spacing-lg;
-			h2{
-				font-size: $font-size-grande - 6;
-				line-height: $font-size-large + 12;
-			}
-			p{
-				font-size: $font-size-micro;
-			}
-		}
-	}
-	.tt-services-content{
-		.service-content-list{
-			.service-icon{
-				text-align: center;
-				padding-top: $spacing-md;
-			}
-			.service-content{
-				padding: $spacing-md 15px;
-				h4{
-					margin-top: 0;
-					font-size: $font-size-medium;
-					font-weight: $font-weight-medium;
-				}
-				.separator{
-					margin-bottom: $spacing-md + $spacing-sm;
-					&:before{
-						margin-left: 0;
-					}
-				}
-				.content-text{
-					padding-left: 15px;
-					p{
-						font-size: $font-size-small - 1;
-					}
-				}
-				.content-list{
-					.btn-normal{
-						display: table-cell;
-						width: 49%;
-						padding: 11px;
-					}
-				}
-			}
-		}
-	}
 }
 @media (min-width: $screen-sm-min) 
 and (max-width: $screen-ipad){ 
-	.nav-header{
-		.container{
-			.navbar-header{
-				a.navbar-brand{
-					padding: 18px;
-					img{
-						height: 25px;
-						width: auto;
-					}
-				}
-			}
-			.navbar-collapse{
-				ul.navbar-right{
-					margin-top: 0;
-					li{
-						a{
-							padding: 22px 10px;
-						}
-						&.btn-request{
-							a{
-								font-size: $font-size-micro;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	.tt-hero{
-		.hero-text{
-			padding-top: $spacing-lg * 2;
-		}
-	}
-	.tt-navigation{
-		margin-top: -$spacing-lg;
-	}
-	.tt-team{
-		.team-box{
-			margin-bottom: $spacing-md;
-			.team-box-img{
-				height: 200px;
-				img{
-					height: 200px;
-				}
-			}
-			.team-box-detail{
-				padding: $spacing-sm;
-				h6.name{
-					margin-bottom: 0;
-				}
-				p{
-					&.title{
-						margin-bottom: $spacing-sm;
-						font-size: $font-size-micro;
-						line-height: $font-size-micro + 4;
-					}
-					&.desc{
-						display: none;
-						font-size: $font-size-micro - 1;
-						font-weight: $font-weight-light;
-						color: $white;
-						margin-bottom: $spacing-sm;
-					}
-				}
-				a.profile-url{
-					font-size: $font-size-small - 1;
-					i{
-						font-size: 15pt;
-					}
-				}
-			}
-			&:hover{
-				.team-box-detail{
-					height: 210px;
-				}
-			}
-		}
-	}
-	.tt-footer{
-		.tt-info{
-			.footer-detail{
-				padding-top: 15px;
-				height: auto !important;
-				padding-bottom: 15px;
-				.footer-detail-marker{
-					float: right;
-					.circle{
-						top: $spacing-sm + $spacing-lg !important;
-						left: $spacing-md !important;
-					}
-				}
-				.footer-detail-text{
-					float: left;
-					padding-left: 0;
-					a{
-						font-size: $font-size-micro !important;
-					}
-					p{
-						font-size: $font-size-micro - 1 !important;
-						margin-bottom: 0;
-					}
-				}
-			}
-			.footer-newsletter{
-				.input-email{
-					margin-top: $spacing-md;
-				}
-			}
-			.separator{
-				margin-bottom: $spacing-md;
-				&:before{
-					margin-left: 0;
-				}
-			}
-		}
-	}
+
 }
 @media (min-width: $screen-sm-min) 
 and (max-width: $screen-ipad)
 and (orientation: portrait){ 
-	.tt-services{
-		padding: $spacing-lg 0 $spacing-lg * 2;
-		.services-box-wrapper{
-			.col-md-3{
-				height: 220px;
-				position: static;
-				-webkit-transition: height .5s;
-				transition: height .5s;
-				.services-box{
-					width: 100%;					
-					.services-box-detail{
-						padding: 0 $spacing-md+$spacing-sm;
-						h5.name{
-							margin-top: 0;
-							margin-bottom: $spacing-sm;
-						}
-						p{
-							&.desc{
-								font-size: $font-size-micro - 1;
-								font-weight: $font-weight-light;
-								margin-bottom: $spacing-sm;
-							}
-						}
-						a.more-services{
-							padding-bottom: $spacing-sm;
-						}
-					}
-					&:hover{
-						.services-box-detail{
-							p{
-								&.desc{
-									display: block;
-								}
-							}
-							a.more-services{
-								display: block;
-							}
-						}
-					}
-				}
-				&:hover{
-					height: 300px;
-				}
-			}
-		}
-	}
+
 }
 
 @media (min-width: $screen-sm-min) 
 and (max-width: $screen-ipad)
 and (orientation: landscape){ 
-	.tt-customer{
-		.customer-list-wrapper{
-			.customer-list{
-				.col-md-4{
-					padding: 0 5px 5px; 
-					a{
-						.box-customer{
-							padding-top: $spacing-lg - 10;
-							height: 140px;
-						}
-					}
 
-				}
-			}
-		}
-	}
-	.tt-team{
-		.team-box{
-			&:hover{
-				.team-box-detail{
-					height: 180px;
-				}
-			}
-		}
-	}
-	.tt-footer{
-		.tt-info{
-			.footer-detail{
-				.footer-detail-marker{
-					.circle{
-						top: $spacing-sm + $spacing-lg;
-						left: $spacing-lg;
-					}
-				}
-			}
-		}
-	}
 }
 
 @media (min-width: $screen-sm-min) 
 and (max-width: $screen-sm-max){ 
-	.tt-services{
-		.services-box-wrapper{
-			.col-sm-12{
-				width: 25% !important;
-				.services-box-detail{
-					padding: 0 15px !important;
-				}
-			}
-		}
-	}
+
 }

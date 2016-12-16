@@ -165,17 +165,19 @@
 				border-left: 0;
 				vertical-align: middle;
 				background: rgba(255,255,255,.1);
-				a{
-					color: $white;
+				button{
+					background: none;
+					border: none;
 					i{
 						font-size: $font-size-medium;
+						color: $white;
+					}
+					&:focus{
+						outline: none;
 					}
 					&:hover{
 						i{
-							color: $light-grey; 
-							&:before{
-								font-weight: 700;
-							}
+							color: darken($white, 15%);
 						}
 					}
 				}

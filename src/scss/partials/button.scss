@@ -1,3 +1,13 @@
+.btn-main{
+	background: $main;
+	color: $white;
+	border-radius: 0;
+	height: 50px;
+
+	&:hover{
+		background: darken($main, 10%);
+	}
+}
 .btn-green{
 	background: $main;
 	color: $white !important;

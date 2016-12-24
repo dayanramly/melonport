@@ -8,16 +8,6 @@
 		background: darken($main, 10%);
 	}
 }
-.btn-light-blue{
-	background: $light-blue;
-	color: $white;
-	height: 50px;
-	padding: 15px 20px;
-	&:hover{
-		background: darken($light-blue, 10%);
-		color: $white;
-	}
-}
 .btn-green{
 	background: $main;
 	color: $white !important;
@@ -33,15 +23,13 @@
 		outline: none;
 	}
 }
-.btn-outline-blue{
+.btn-outline-green{
 	background: transparent;
-	color: $light-blue !important;
-	border: 2px solid $light-blue;
-	padding: 10px 30px;
+	color: $main !important;
+	border: 1px solid $main;
 	&:hover{
-		border: 2px solid darken($light-blue, 10%) !important;
+		border: 1px solid darken($main, 10%) !important;
 		background-color: darken($white, 1%) !important;
-		color: darken($light-blue, 10%) !important;
 	}
 	&:active{
 		&:focus{

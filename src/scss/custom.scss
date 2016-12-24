@@ -911,7 +911,6 @@ $fullwidth : 100%;
 		}
 	}
 }
-
 // learn work page
 .mp-learn-works{
 	.nav-work{
@@ -966,7 +965,6 @@ $fullwidth : 100%;
 		}
 	}
 }
-
 // learn started section
 .mp-learn-started{
 	.started-tab{
@@ -1343,6 +1341,119 @@ $fullwidth : 100%;
 			}
 		}
 	}
+
+	.mp-about-hero{
+		.hero-text{
+			padding: $spacing-lg * 2 30px 0;
+			h1{
+				font-size: $font-size-grande;
+				line-height: 1.4;
+			}
+		}
+	}
+	.mp-about-main{
+		padding: 0 0 $spacing-lg * 2;
+		.nav-about-wrapper{
+			.nav-about{
+				li{
+					padding: 20px;
+					a{
+						font-size: $font-size-small - 1;
+					}
+				}
+			}
+		}
+		.content-about-wrapper{
+			&#content-brief{
+				.brief-intro{
+					padding: $spacing-lg $spacing-md 0;
+					img{
+						margin-bottom: $spacing-md;
+					}
+					h3{
+						font-size: $font-size-normal + 2;
+						line-height: 2;
+					}
+					p{
+						font-size: $font-size-small;
+						padding: $spacing-md $spacing-md $spacing-lg;
+					}
+				}
+				.brief-count{
+					border-top: 1px solid #cccccc;
+					border-bottom: 0;
+					.box-count-wrapper{
+						border-right: none;
+						border-bottom: 1px solid #cccccc;
+						padding: 30px 40px;
+					}
+				}
+				.brief-team{
+					padding: $spacing-lg $spacing-md;
+					.brief-team-wrapper{
+						.sub-about-title{
+							margin-bottom: $spacing-lg;
+						}
+						.brief-team-box{
+							.brief-team-text{
+								p{
+									min-height: 200px;
+								}
+								ul.team-box-social{
+									margin-bottom: $spacing-lg;
+								}
+							}
+						}
+					}
+				}
+			}
+			&#content-careers{
+				padding: 0;
+				.careers{
+					background: #f9f9f9;
+					.careers-wrapper{
+						padding: $spacing-md $spacing-sm $spacing-sm;
+						.careers-title{
+							p{
+								font-size: $font-size-small;
+							}
+						}
+						.careers-box-wrapper{
+							margin-top: $spacing-lg - 20;
+							.careers-box{
+								padding: 20px 30px;
+								margin-bottom: $spacing-lg;
+							}
+						}
+					}
+				}
+				.benefit{
+					padding: 0 $spacing-md;
+					.benefit-box-wrapper{
+						margin-top: $spacing-lg;
+						width: 100%;
+						margin: 0;
+						.benefit-box{
+							margin-bottom: $spacing-sm;
+							min-height: 60px;
+						}
+					}
+				}
+				.join-team{
+					p{
+						font-size: $font-size-small;
+					}
+				}
+			}
+			&#content-purpose{
+				padding: 0;
+				p{
+					padding: $spacing-md $spacing-md;
+					font-size: $font-size-small;
+				}
+			}
+		}
+	}
 }
 @media (max-width: $screen-xs-max)
 and (orientation: portrait){ 
@@ -1499,6 +1610,23 @@ and (orientation: landscape){
 			}
 		}
 	}
+	.mp-about-main{
+		.content-about-wrapper{
+			&#content-brief{
+				.brief-team{
+					.brief-team-wrapper{
+						.brief-team-box{
+							.brief-team-text{
+								p{
+									min-height: 100px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 @media (min-width: $screen-sm-min) 
 and (max-width: $screen-ipad)
@@ -1582,6 +1710,78 @@ and (orientation: portrait){
 			}
 		}
 	}
+	.mp-about-main{
+		.content-about-wrapper{
+			&#content-brief{
+				.brief-intro{
+					padding: $spacing-lg $spacing-lg * 2 0;
+					img{
+						margin-bottom: $spacing-md;
+					}
+					p{
+						padding: $spacing-lg $spacing-md;
+					}
+				}
+				.brief-count{
+					.box-count-wrapper{
+						padding: 30px;
+						.box-count{
+							.box-count-icon{
+								width: 50px;
+								i{
+									font-size: 40px;
+								}
+							}
+						}
+					}
+				}
+				.brief-team{
+					.brief-team-wrapper{
+						.brief-team-box{
+							.brief-team-text{
+								p{
+									min-height: 250px;
+								}
+								ul.team-box-social{
+									margin-bottom: $spacing-lg;
+								}
+							}
+						}
+					}
+				}
+			}
+			&#content-careers{
+				padding: 0;
+				.careers{
+					.careers-wrapper{
+						.careers-box-wrapper{
+							.careers-box{
+								margin-bottom: $spacing-lg;
+								min-height: 370px;
+							}
+						}
+					}
+				}
+				.benefit{
+					.row{
+						width: 100%;
+						margin: 0;
+					}
+					.benefit-box-wrapper{
+						margin-top: $spacing-lg;
+						.benefit-box{
+							min-height: 60px;
+						}
+					}
+				}
+			}
+			&#content-purpose{
+				p{
+					padding: $spacing-md 0;
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: $screen-sm-min) 
@@ -1596,6 +1796,38 @@ and (orientation: landscape){
 						p{
 							line-height: normal;
 							margin-top: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.mp-about-main{
+		.content-about-wrapper{
+			&#content-brief{
+				.brief-team{
+					.brief-team-wrapper{
+						.brief-team-box{
+							.brief-team-text{
+								p{
+									font-size: $font-size-micro;
+									min-height: 340px;
+								}
+							}
+						}
+					}
+				}
+			}
+			&#content-careers{
+				padding: 0;
+				.careers{
+					background: #f9f9f9;
+					.careers-wrapper{
+						.careers-box-wrapper{
+							margin-top: $spacing-lg + $spacing-md;
+							.careers-box{
+								min-height: 370px;
+							}
 						}
 					}
 				}

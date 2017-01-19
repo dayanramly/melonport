@@ -5,6 +5,28 @@
 @import "partials/base";
 
 $fullwidth : 100%;
+.mp-hero{
+	background: url('../img/bgr_hero.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	.hero-text{
+		h1{
+			color: $white;
+			font-size: $font-size-grande + 4;
+			font-weight: $font-weight-light;
+			margin-bottom: 0;
+		}
+		p{
+			font-size: $font-size-medium;
+			margin-bottom: $spacing-lg;
+			color: $white;
+		}
+	}
+	.hero-summary{
+		padding-top: 120px;
+	}
+}
 
 // global
 .main-title{
@@ -1908,3 +1930,5 @@ and (orientation: landscape){
 		}
 	}
 }
+
+@import "pages/daemon";
